@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "https://github.com/FITLPI/sso";
+option go_package = "github.com/FITLPI/sso";
 
 service Auth {
     rpc Registr(RegistrRequest) returns (RegistrResponse);
