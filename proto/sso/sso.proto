@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package auth;
+
+option go_package = "boykov.sso.v1;ssoy1";
+
+service Auth {
+    rpc Registr(RegistrRequest) returns (RegistrResponse)
+    rpc Login(LoginRequest) returns (LoginResponse)
+    rpc IsAdmin(IsAdminRequest) returns (IsAdminResponse)
+}
+
+message RegistrRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message RegistrResponse {
+    int64 user_id = 1 
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+    int64 app_id
+}
+
+message LoginResponse {
+    string token = 1 
+}
+
+message IsAdminRequest {
+    int64 user_id = 1
+}
+
+message IsAdminResponse {
+    bool is_admin = 1
+}
