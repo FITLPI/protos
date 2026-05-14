@@ -2,12 +2,12 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "boykov.sso.v1;ssoy1";
+option go_package = "https://github.com/FITLPI/sso";
 
 service Auth {
-    rpc Registr(RegistrRequest) returns (RegistrResponse)
-    rpc Login(LoginRequest) returns (LoginResponse)
-    rpc IsAdmin(IsAdminRequest) returns (IsAdminResponse)
+    rpc Registr(RegistrRequest) returns (RegistrResponse);
+    rpc Login(LoginRequest) returns (LoginResponse);
+    rpc IsAdmin(IsAdminRequest) returns (IsAdminResponse);
 }
 
 message RegistrRequest {
@@ -16,23 +16,23 @@ message RegistrRequest {
 }
 
 message RegistrResponse {
-    int64 user_id = 1 
+    int64 user_id = 1;
 }
 
 message LoginRequest {
     string email = 1;
     string password = 2;
-    int64 app_id
+    int64 app_id = 3;
 }
 
 message LoginResponse {
-    string token = 1 
+    string token = 1;
 }
 
 message IsAdminRequest {
-    int64 user_id = 1
+    int64 user_id = 1;
 }
 
 message IsAdminResponse {
-    bool is_admin = 1
+    bool is_admin = 1;
 }
