@@ -1,4 +1,4 @@
-module protos
+module github.com/FITLPI/proto
 
 go 1.26.2
 
